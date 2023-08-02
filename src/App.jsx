@@ -17,7 +17,6 @@ function App() {
   const { setUser,isAuthenticated,setIsAuthenticated, loading, setLoading, refresh } = useContext(Context)
 
   useEffect(() => {
-    if(isAuthenticated){
       setLoading(true)
     axios.get(`${server}/users/me`, {
       withCredentials: true,
@@ -31,9 +30,8 @@ function App() {
       setIsAuthenticated(false)
       setUser({})
       // console.log(error.response.data.message)
-      toast.error("error.response.data.message")
     })
-    }
+    
   }, [refresh])
 
   return (
