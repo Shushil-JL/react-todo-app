@@ -35,7 +35,7 @@ const Header = () => {
         <Link to={"/profile"}>Profile</Link>
 
         {
-          isAuthenticated ? (<button disabled={loading} className='btn' onClick={logoutHandler}>Logout</button>) : (<Link to={"/login"}>Login</Link>)
+          isAuthenticated && (<button disabled={loading} className='btn' onClick={logoutHandler}>Logout</button>)
         }
 
       </article>

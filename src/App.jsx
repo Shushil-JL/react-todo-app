@@ -14,10 +14,10 @@ import Loader from "./components/Loader"
 
 
 function App() {
-  const { setUser,isAuthenticated,setIsAuthenticated, loading, setLoading, refresh } = useContext(Context)
+  const { setUser, setIsAuthenticated, loading, setLoading, refresh } = useContext(Context)
 
   useEffect(() => {
-      setLoading(true)
+    setLoading(true)
     axios.get(`${server}/users/me`, {
       withCredentials: true,
     }).then(res => {
@@ -31,7 +31,7 @@ function App() {
       setUser({})
       // console.log(error.response.data.message)
     })
-    
+
   }, [refresh])
 
   return (
